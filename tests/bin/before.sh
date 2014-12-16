@@ -7,8 +7,8 @@ fi
 
 WP_VERSION=${1-master}
 PLUGIN_SLUG=$(basename $(pwd))
+WP_DEVELOP_DIR=/tmp/wordpress/
 
-export WP_DEVELOP_DIR=/tmp/wordpress/
 git clone --depth=50 --branch="$WP_VERSION" git://develop.git.wordpress.org/ /tmp/wordpress
 cd ..
 cp -r "$PLUGIN_SLUG" "/tmp/wordpress/src/wp-content/plugins/$PLUGIN_SLUG"
