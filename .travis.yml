@@ -19,9 +19,6 @@ before_script:
 - bash tests/bin/before.sh $WP_VERSION
 
 script:
-- export WP_MULTISITE=0
-- phpunit
-- export WP_MULTISITE=1
-- phpunit
+- bash tests/bin/phpunit.sh
 - if [[ "$PHPLINT" == "1" ]]; then bash tests/bin/phplint.sh; fi
 - if [[ "$CODE_CLIMATE" == "1" ]]; then bash tests/bin/code_climate.sh; fi
